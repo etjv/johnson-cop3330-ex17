@@ -45,7 +45,13 @@ public class App {
     private static float getWeight(){
         System.out.print("What is your weight? ");
         String x = in.nextLine();
-        return Float.parseFloat(x.replace(" ", ""));
+        if(x.matches("[0-9]+")){
+            return Float.parseFloat(x.replace(" ", ""));
+        }
+        else{
+            System.out.println("Enter only numerical data!");
+            return getWeight();
+        }
     }
 
     private static int getGender(){
@@ -66,19 +72,37 @@ public class App {
     private static float getDrinks(){
         System.out.print("How many drinks have you had? ");
         String x = in.nextLine();
-        return Float.parseFloat(x.replace(" ", ""));
+        if(x.matches("[0-9]+")){
+            return Float.parseFloat(x.replace(" ", ""));
+        }
+        else{
+            System.out.println("Enter only numerical data!");
+            return getDrinks();
+        }
     }
 
     private static float getABV(){
         System.out.print("What is the ABV of the drinks you have been drinking? ");
         String x = in.nextLine();
-        return Float.parseFloat(x.replace(" ", ""));
+        if(x.matches("[0-9]+")){
+            return Float.parseFloat(x.replace(" ", ""));
+        }
+        else{
+            System.out.println("Enter only numerical data!");
+            return getABV();
+        }
     }
 
     private static float getHours(){
         System.out.print("How many hours has it been since your last alcoholic beverage? ");
         String x = in.nextLine();
-        return Float.parseFloat(x.replace(" ", ""));
+        if(x.matches("[0-9]+")){
+            return Float.parseFloat(x.replace(" ", ""));
+        }
+        else{
+            System.out.println("Enter only numerical data!");
+            return getHours();
+        }
     }
 
     private static String canYouDrive(float w, int g, float d, float abv, float h){
